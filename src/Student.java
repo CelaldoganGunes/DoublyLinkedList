@@ -59,5 +59,12 @@ public class Student {
 
     //endregion
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "ogrenciNumarasi=" + ogrenciNumarasi +
+                ", adSoyad='" + adSoyad + '\'' +
+                ", telefonListesi=" + telefonListesi +
+                '}';
+    }
 }
