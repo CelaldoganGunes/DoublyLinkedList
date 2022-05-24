@@ -88,6 +88,7 @@ public class DoublyLinkedList {
             Node newNode = new Node(null,null,student);
             this.setHead(newNode);
             this.setTail(newNode);
+            System.out.println("Öğrenci başarıyla eklendi.");
             return;
         }
         //En sona ekleme
@@ -95,6 +96,7 @@ public class DoublyLinkedList {
             Node newNode = new Node(tail,null,student);
             tail.setNextNode(newNode);
             tail = newNode;
+            System.out.println("Öğrenci başarıyla eklendi.");
             return;
         }
 
@@ -104,6 +106,7 @@ public class DoublyLinkedList {
             Node newNode = new Node(null,head,student);
             head.setPreviousNode(newNode);
             head = newNode;
+            System.out.println("Öğrenci başarıyla eklendi.");
             return;
         }
 
@@ -124,6 +127,7 @@ public class DoublyLinkedList {
         Node newNode = new Node(oncekiNode,siradakiNode,student);
         oncekiNode.setNextNode(newNode);
         siradakiNode.setPreviousNode(newNode);
+        System.out.println("Öğrenci başarıyla eklendi.");
 
         return;
     }
@@ -132,12 +136,12 @@ public class DoublyLinkedList {
     {
         if(this.getHead() == null)
         {
-            System.out.println("Liste boş");
+            System.out.println("Öğrenci listesi boş.");
             return;
         }
 
         System.out.println(" ");
-        System.out.println("Düzgün Sayım");
+        System.out.println("Öğrenci Listesi (Numaralar Küçükten Büyüğe)");
 
         Node siradakiNode = head;
 
@@ -153,12 +157,12 @@ public class DoublyLinkedList {
     {
         if(this.getTail() == null)
         {
-            System.out.println("Liste boş");
+            System.out.println("Öğrenci listesi boş.");
             return;
         }
 
         System.out.println(" ");
-        System.out.println("Tersine Sayım");
+        System.out.println("Öğrenci Listesi (Numaralar Büyükten Küçüğe)");
 
         Node siradakiNode = tail;
 
@@ -183,7 +187,18 @@ public class DoublyLinkedList {
             }
             siradakiNode = siradakiNode.getNextNode();
         }
-        System.out.println(ogrenciListesi);
+
+        if(ogrenciListesi.size()==0)
+        {
+            System.out.println("Öğrenci bulunamadı.");
+            return;
+        }
+
+        System.out.println("");
+        System.out.println("Bulunan Öğrenciler: ");
+        for(Student student: ogrenciListesi){
+            System.out.println(student.toString());
+        }
     }
 
     public void deleteByNumber(int oOgrenciNo)
@@ -224,9 +239,13 @@ public class DoublyLinkedList {
 
                 simdikiNode = null;
 
+                System.out.println("");
+                System.out.println("Öğrenci başarıyla silindi.");
                 return;
             }
             simdikiNode = simdikiNode.getNextNode();
         }
+
+        System.out.println("Öğrenci bulunamadı.");
     }
 }
