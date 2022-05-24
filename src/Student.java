@@ -61,10 +61,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "ogrenciNumarasi=" + ogrenciNumarasi +
-                ", adSoyad='" + adSoyad + '\'' +
-                ", telefonListesi=" + telefonListesi +
-                '}';
+
+        return "Numara: " + ogrenciNumarasi +", Ad Soyad: "+ adSoyad + ", Telefon: " + telefonListesi;
     }
 }

@@ -1,88 +1,56 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
+    public static DoublyLinkedList liste;
     public static void main(String[] args) {
 	// write your code here
 
-        DoublyLinkedList liste = new DoublyLinkedList();
+        liste = new DoublyLinkedList();
+        importData();
+    }
 
-        liste.print();
+    public static void importData()
+    {
+        Scanner fileIN = null;
+        try {
+             fileIN = new Scanner(new FileInputStream("ogrenciler.txt"));
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println("File not found.");
+            return;
+        }
 
+        while (fileIN.hasNextLine())
+        {
+            String word;
+            word = fileIN.nextLine();
 
-        ArrayList<String> numaraListesi = new ArrayList<String>();
-        numaraListesi.add("0123456789");
-        Student ogrenci1 = new Student(1,"birNolu",numaraListesi);
-        numaraListesi.add("123456789");
-        Student ogrenci2 = new Student(2,"ikiNolu",numaraListesi);
-        Student ogrenci3 = new Student(3,"üçNolu",numaraListesi);
-        Student ogrenci4 = new Student(4,"birNolu",numaraListesi);
-        Student ogrenci5 = new Student(5,"beşNolu",numaraListesi);
+            String kisiBilgileri[] = word.split(",");
 
-        System.out.println(" ");
-        System.out.println("birinci ekleniyor.");
-        liste.insertToList(ogrenci1);
-        liste.print();
-        liste.printReverse();
+            int studentNumber = Integer.parseInt(kisiBilgileri[0]);
+            String studentName = kisiBilgileri[1];
+            ArrayList<String> numberList = new ArrayList<String>();
 
-        System.out.println(" ");
-        System.out.println("ikinci ekleniyor.");
-        liste.insertToList(ogrenci2);
-        liste.print();
-        liste.printReverse();
+            for(int i=2;i<kisiBilgileri.length; i++)
+            {
+                String phoneNumber = kisiBilgileri[i];
+                numberList.add(phoneNumber);
+            }
 
-        System.out.println(" ");
-        System.out.println("beşinci ekleniyor.");
-        liste.insertToList(ogrenci5);
-        liste.print();
-        liste.printReverse();
+            Student ogrenci = new Student(studentNumber,studentName,numberList);
+            liste.insertToList(ogrenci);
+            liste.print();
+            System.out.println("");
+        }
+    }
 
-        System.out.println(" ");
-        System.out.println("dört ekleniyor.");
-        liste.insertToList(ogrenci4);
-        liste.print();
-        liste.printReverse();
-
-        System.out.println(" ");
-        System.out.println("üçüncü ekleniyor.");
-        liste.insertToList(ogrenci3);
-        liste.print();
-        liste.printReverse();
-
-        System.out.println(" ");
-        System.out.println("Öğrenci aranıyor");
-        liste.searchByName("beşNolu");
-
-        System.out.println(" ");
-        System.out.println("Öğrenci 4 siliniyor");
-        liste.deleteByNumber(4);
-        liste.print();
-        liste.printReverse();
-
-        System.out.println(" ");
-        System.out.println("Öğrenci 5 siliniyor");
-        liste.deleteByNumber(5);
-        liste.print();
-        liste.printReverse();
-
-        System.out.println(" ");
-        System.out.println("Öğrenci 1 siliniyor");
-        liste.deleteByNumber(1);
-        liste.print();
-        liste.printReverse();
-
-        System.out.println(" ");
-        System.out.println("altinci ekleniyor.");
-        Student ogrenci6 = new Student(6,"altiNolu",numaraListesi);
-        liste.insertToList(ogrenci6);
-        liste.print();
-        liste.printReverse();
-
-        System.out.println(" ");
-        System.out.println("birinci ekleniyor.");
-        liste.insertToList(ogrenci1);
-        liste.print();
-        liste.printReverse();
-
+    public static void importStudent()
+    {
+        System.out.println("Öğrenci Bil");
     }
 }

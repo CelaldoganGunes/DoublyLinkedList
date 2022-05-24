@@ -70,12 +70,9 @@ public class DoublyLinkedList {
 
         @Override
         public String toString() {
-            return "Node{" +
-                    "data=" + data +
-                    '}';
+            return data.toString();
         }
     }
-
 
     public DoublyLinkedList()
     {
@@ -139,6 +136,8 @@ public class DoublyLinkedList {
             return;
         }
 
+        System.out.println(" ");
+        System.out.println("Düzgün Sayım");
 
         Node siradakiNode = head;
 
@@ -229,10 +228,5 @@ public class DoublyLinkedList {
             }
             simdikiNode = simdikiNode.getNextNode();
         }
-
-
     }
-
-
-
 }
