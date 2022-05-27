@@ -171,8 +171,9 @@ public class Main {
             }
             else if (process.equals("7"))
             {
-                //Döngüden çıkartıyoruz. Bu sayede program kapanıyor.s
-                cikisYap = true;
+                //Döngüden çıkartıyoruz. Bu sayede program kapanıyor.
+                //cikisYap = true;
+                System.exit(0);
             }
             else
             {
