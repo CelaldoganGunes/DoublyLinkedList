@@ -230,6 +230,7 @@ public class DoublyLinkedList {
                 onceki = simdikiNode.getPreviousNode();
                 sonraki = simdikiNode.getNextNode();
 
+                
                 if (onceki != null)
                 {
                     onceki.setNextNode(sonraki);
@@ -238,7 +239,17 @@ public class DoublyLinkedList {
                 {
                     //Head'in silinmesi
                     head = simdikiNode.getNextNode();
-                    head.setPreviousNode(null);
+                    
+                    /*
+                    
+                    Listede kalan son objeyi sildiysek head null oluyor. 
+                    Bunun dışında head silinirse yeni head'in previous referansı null yapılıyor.
+                    
+                    */
+                    if (head != null) 
+                    {
+                        head.setPreviousNode(null);
+                    }
                 }
 
                 if(sonraki != null)
@@ -249,7 +260,18 @@ public class DoublyLinkedList {
                 {
                     //Tail'in silinmesi
                     tail = simdikiNode.getPreviousNode();
-                    tail.setNextNode(null);
+                                        
+                    /*
+                    
+                    Listede kalan son objeyi sildiysek tail null oluyor. 
+                    Bunun dışında head silinirse yeni tail'in next referansı null yapılıyor.
+                    
+                    */
+                    if (tail != null) 
+                    {
+                        tail.setNextNode(null);
+                    }
+                    
                 }
 
                 simdikiNode = null;
