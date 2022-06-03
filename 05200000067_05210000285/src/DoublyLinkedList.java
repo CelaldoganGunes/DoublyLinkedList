@@ -260,7 +260,7 @@ public class DoublyLinkedList {
                 {
                     //Tail'in silinmesi
                     tail = simdikiNode.getPreviousNode();
-                                        
+                                       
                     /*
                     
                     Listede kalan son objeyi sildiysek tail null oluyor. 
