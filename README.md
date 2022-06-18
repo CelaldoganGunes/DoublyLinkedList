@@ -3,10 +3,12 @@
 </p>
 
 > A Computer Science Class Project
+> We created Doubly LinkedList data structure in Java.
+> Detailed information can be found in "Project Description.pdf" file in Turkish language.
 
-## Author
+## Authors
 
-👤 **Celaldogan Gunes, Omer Tarik Ilhan Zembat**
+👤 **Celaldogan Gunes, Omer Tarik Ilhan Zembat** (Ege University, Izmir, Turkey)
 
 
 ## Show your support
