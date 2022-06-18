@@ -3,8 +3,9 @@
 </p>
 
 > A Computer Science Class Project
+
 > We created Doubly LinkedList data structure in Java.
-> Detailed information can be found in "Project Description.pdf" file in Turkish language.
+> > Detailed information can be found in "Project Description.pdf" file in Turkish language.
 
 ## Authors
 
